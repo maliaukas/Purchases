@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">Purchases</string>
+
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">Purchases</string>
+    <string name="second_fragment_label">Add new purchase</string>
+
+    <!-- Buttons text  -->
+    <string name="button_add_text">Add</string>
+    <string name="input_date_text">Date</string>
+
+    <!-- Content description-->
+    <string name="add_record_content_descr">Add record</string>
+    <string name="filter_content_descr">Filter</string>
+
+    <!-- Edittext hints-->
+    <string name="name_hint">Name</string>
+    <string name="cost_hint">Cost</string>
+
+    <!-- Preferences -->
+    <string name="prefs_sort_column_summary">Select the sorting column. Current: %1$s</string>
+    <string name="prefs_sort_column_key">sorting_mode</string>
+    <string name="prefs_sort_column_title">Sorting mode</string>
+    <string name="prefs_sort_column_default">p_date</string>
+    <string name="prefs_sort_order_key">sort_order</string>
+    <string name="prefs_sort_order_default">true</string>
+    <string name="settings_fragment_label">Settings</string>
+    <string name="prefs_database_key">database</string>
+    <string name="prefs_database_title">Use Room Database</string>
+    <string name="prefs_sort_order_title">Ascending</string>
+    <string name="prefs_database_default">true</string>
+
+    <string-array name="prefs_sort_column_entries">
+        <item>@string/name_hint</item>
+        <item>@string/input_date_text</item>
+        <item>@string/cost_hint</item>
+    </string-array>
+
+    <string-array name="prefs_sort_column_values">
+        <item>p_name</item>
+        <item>p_date</item>
+        <item>p_cost</item>
+    </string-array>
+</resources>

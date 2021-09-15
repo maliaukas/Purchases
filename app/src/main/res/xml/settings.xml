@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.preference.PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ListPreference
+        app:defaultValue="@string/prefs_sort_column_default"
+        app:entries="@array/prefs_sort_column_entries"
+        app:entryValues="@array/prefs_sort_column_values"
+        app:icon="@drawable/ic_baseline_filter_alt_24"
+        app:key="@string/prefs_sort_column_key"
+        app:summary="@string/prefs_sort_column_summary"
+        app:title="@string/prefs_sort_column_title" />
+
+    <SwitchPreference
+        app:defaultValue="@string/prefs_sort_order_default"
+        app:icon="@drawable/ic_baseline_arrow_upward_24"
+        app:key="@string/prefs_sort_order_key"
+        app:title="@string/prefs_sort_order_title" />
+
+    <SwitchPreference
+        app:defaultValue="@string/prefs_database_default"
+        app:icon="@drawable/ic_server"
+        app:key="@string/prefs_database_key"
+        app:title="@string/prefs_database_title"/>
+
+</androidx.preference.PreferenceScreen>
