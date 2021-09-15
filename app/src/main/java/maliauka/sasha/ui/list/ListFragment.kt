@@ -28,12 +28,6 @@ class ListFragment : Fragment(R.layout.fragment_list), OnPurchaseClickListener {
         PurchaseViewModelFactory(((activity?.application) as PurchaseApp).repository)
     }
 
-    override fun onResume() {
-        super.onResume()
-//        viewModel.setSortColumn(sortByColumn())
-//        viewModel.setSortOrder(sortOrder())
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 

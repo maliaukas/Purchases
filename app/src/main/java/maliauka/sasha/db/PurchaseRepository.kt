@@ -5,7 +5,7 @@ import androidx.annotation.WorkerThread
 import androidx.lifecycle.MutableLiveData
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flowOf
-import maliauka.sasha.db.cursor.POpenHelper
+import maliauka.sasha.db.cursor.PurchaseOpenHelper
 import maliauka.sasha.db.room.PurchaseDao
 import maliauka.sasha.model.Purchase
 
@@ -13,7 +13,7 @@ import maliauka.sasha.model.Purchase
 class PurchaseRepository(
     private val purchaseDao: PurchaseDao,
     private val application: Application,
-    private val dbHelper: POpenHelper = POpenHelper(application)
+    private val dbHelper: PurchaseOpenHelper = PurchaseOpenHelper(application)
 ) {
     val notifyCursor = MutableLiveData(true)
     var useRoom = true

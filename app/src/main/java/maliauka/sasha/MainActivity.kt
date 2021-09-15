@@ -14,10 +14,6 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
     private lateinit var appBarConfiguration: AppBarConfiguration
     private val binding: ActivityMainBinding by viewBinding()
 
-//    private val viewModel: PurchaseViewModel by viewModels {
-//        PurchaseViewModelFactory((this.application as PurchaseApp).repository)
-//    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 

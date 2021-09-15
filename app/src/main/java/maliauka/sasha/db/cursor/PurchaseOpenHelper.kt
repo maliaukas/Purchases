@@ -8,7 +8,7 @@ import kotlinx.datetime.LocalDate
 import maliauka.sasha.db.*
 import maliauka.sasha.model.Purchase
 
-class POpenHelper(context: Context) :
+class PurchaseOpenHelper(context: Context) :
     SQLiteOpenHelper(context, databaseName, null, 1) {
 
     override fun onCreate(p0: SQLiteDatabase?) {
