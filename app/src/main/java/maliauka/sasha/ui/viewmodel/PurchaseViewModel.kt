@@ -2,8 +2,8 @@ package maliauka.sasha.ui.viewmodel
 
 import androidx.lifecycle.*
 import kotlinx.coroutines.launch
-import maliauka.sasha.model.Purchase
 import maliauka.sasha.db.PurchaseRepository
+import maliauka.sasha.model.Purchase
 
 class PurchaseViewModel(private val repository: PurchaseRepository) : ViewModel() {
     private class TripleTrigger<A, B, C>(a: LiveData<A>, b: LiveData<B>, c: LiveData<C>) :
@@ -15,7 +15,7 @@ class PurchaseViewModel(private val repository: PurchaseRepository) : ViewModel(
         }
     }
 
-    private val sortColumn = MutableLiveData<String>()
+    private val sortColumn = MutableLiveData<String>("")
 
     private val sortOrder = MutableLiveData<Boolean>()
 

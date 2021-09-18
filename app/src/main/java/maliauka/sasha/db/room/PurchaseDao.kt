@@ -3,15 +3,15 @@ package maliauka.sasha.db.room
 import androidx.room.*
 import kotlinx.coroutines.flow.Flow
 import maliauka.sasha.db.costCol
-import maliauka.sasha.db.databaseName
 import maliauka.sasha.db.dateCol
 import maliauka.sasha.db.nameCol
+import maliauka.sasha.db.tableName
 import maliauka.sasha.model.Purchase
 
 @Dao
 interface PurchaseDao {
 
-    @Query("delete from $databaseName")
+    @Query("delete from $tableName")
     suspend fun deleteAll()
 
     @Insert
@@ -23,7 +23,7 @@ interface PurchaseDao {
     @Delete
     suspend fun delete(p: Purchase)
 
-    @Query("select * from $databaseName")
+    @Query("select * from $tableName")
     fun getAll(): Flow<List<Purchase>>
 
     fun getAllSorted(column: String, ascending: Boolean): Flow<List<Purchase>> {
@@ -34,25 +34,25 @@ interface PurchaseDao {
             costCol to false -> getAllSortedByCostDesc()
             dateCol to true -> getAllSortedByDateAsc()
             dateCol to false -> getAllSortedByDateDesc()
-            else -> throw IllegalArgumentException("Wrong sorting parameters!")
+            else -> throw IllegalArgumentException("Wrong sorting parameters!: $column, $ascending")
         }
     }
 
-    @Query("select * from $databaseName order by $nameCol desc")
+    @Query("select * from $tableName order by $nameCol desc")
     fun getAllSortedByNameDesc(): Flow<List<Purchase>>
 
-    @Query("select * from $databaseName order by $nameCol asc")
+    @Query("select * from $tableName order by $nameCol asc")
     fun getAllSortedByNameAsc(): Flow<List<Purchase>>
 
-    @Query("select * from $databaseName order by $costCol desc")
+    @Query("select * from $tableName order by $costCol desc")
     fun getAllSortedByCostDesc(): Flow<List<Purchase>>
 
-    @Query("select * from $databaseName order by $costCol asc")
+    @Query("select * from $tableName order by $costCol asc")
     fun getAllSortedByCostAsc(): Flow<List<Purchase>>
 
-    @Query("select * from $databaseName order by $dateCol desc")
+    @Query("select * from $tableName order by $dateCol desc")
     fun getAllSortedByDateDesc(): Flow<List<Purchase>>
 
-    @Query("select * from $databaseName order by $dateCol asc")
+    @Query("select * from $tableName order by $dateCol asc")
     fun getAllSortedByDateAsc(): Flow<List<Purchase>>
 }

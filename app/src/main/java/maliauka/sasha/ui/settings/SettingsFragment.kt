@@ -48,9 +48,10 @@ class SettingsFragment : PreferenceFragmentCompat(),
 
     private fun updateListPrefSummary() {
         val preference = findPreference<ListPreference>(getString(R.string.prefs_sort_column_key))
-        val entry = preference?.entry ?: getString(R.string.prefs_sort_column_default)
-        viewModel.setSortColumn(entry.toString())
-        preference?.summary = String.format(getString(R.string.prefs_sort_column_summary), entry)
+        val value = preference?.value ?: getString(R.string.prefs_sort_column_default)
+        viewModel.setSortColumn(value)
+        preference?.summary =
+            String.format(getString(R.string.prefs_sort_column_summary), preference?.entry)
     }
 
     override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, key: String) {
